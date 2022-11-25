@@ -6,7 +6,7 @@ RUN apt update
 RUN apt-get install -y git
 RUN git clone https://github.com/wszafcemamczipsyibatony2/pythoned-chall.git
 RUN mkdir /home/ctf
-RUN cp -a pythoned-chall/source/* /home/ctf
+RUN cp pythoned-chall/Classer.py /home/ctf
 
 # Setup Server Environment
 RUN apt install -y \
