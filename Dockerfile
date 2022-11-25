@@ -3,6 +3,11 @@ FROM python:3.9
 # update
 RUN apt update
 
+RUN apt-get install -y git
+RUN git clone https://github.com/wszafcemamczipsyibatony2/pythoned-chall.git
+RUN mkdir /home/ctf
+RUN cp -a pythoned-chall/source/* /home/ctf
+
 # Setup Server Environment
 RUN apt install -y \
     socat
@@ -16,7 +21,7 @@ RUN echo "ctf:ctf" | chpasswd
 RUN pip3 install pyyaml
 # Change user and work directory
 WORKDIR /home/ctf
-COPY ./Classer.py .
+
 USER ctf
 
 # Entry point
